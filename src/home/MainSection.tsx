@@ -2,9 +2,10 @@ import { Button, Grid, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 
 const MainSection = () => {
-  const title = "Vos queres crecer.\n Nosotros te queremos ayudar";
+  const title =
+    "¿Sabias que cada donación voluntaria permite salvar hasta cuatro vidas?";
   const subtitle =
-    "Crea una web con plantillas impecables, fácil edición y sin codificación.";
+    " El proceso solo dura entre 7 a 10 minutos, y con eso ayudas un montón. Podes empezar haciendo click en el botón DONAR de aquí abajo. ";
 
   return (
     <Grid
@@ -26,7 +27,7 @@ const MainSection = () => {
         textAlign={{ xs: "center", sm: "left" }}
       >
         <Grid item>
-          <Typography variant="h2" className="title d-tablet d-desktop">
+          <Typography variant="h3" className="title d-tablet d-desktop">
             {title}
           </Typography>
 
@@ -35,7 +36,11 @@ const MainSection = () => {
           </Typography>
         </Grid>
         <Grid item>
-          <Typography variant="h5" className="subtitle">
+          <Typography
+            variant="body1"
+            className="subtitle"
+            sx={{ lineHeight: "1.75" }}
+          >
             {subtitle}
           </Typography>
         </Grid>
@@ -45,7 +50,7 @@ const MainSection = () => {
             className="button contained "
             size="large"
           >
-            Completar formulario
+            donar
           </Button>
         </Grid>
       </Grid>
@@ -73,7 +78,7 @@ const MainSection = () => {
             className="button contained d-mobile"
             size="large"
           >
-            Completar formulario
+            donar
           </Button>
         </Stack>
       </Grid>
