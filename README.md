@@ -36,9 +36,3 @@ Procurar tener actualizado `node.js` a la versión `lts`. Si desea asegurarse, p
 - [TypeScript](https://www.typescriptlang.org/)
 - [NextJS](https://nextjs.org/)
 - [Material UI](https://mui.com/core/)
-
-## Artículos y ejemplos  tomados en cuenta para el desarrollo del template
-
-- [Dependency Injection with NextJS and TypeScript](https://himynameistim.com/blog/dependency-injection-with-nextjs-and-typescript)
-- [Testing in NextJS](https://nextjs.org/docs/testing)
-- [Example Next + Jest](https://github.com/vercel/next.js/tree/canary/examples/with-jest)
