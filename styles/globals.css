@@ -73,6 +73,10 @@ a {
   color: var(--color-fuente-gris);
 }
 
+.subtitle.bold {
+  font-weight: bold;
+}
+
 /* layout */
 
 .d-mobile {

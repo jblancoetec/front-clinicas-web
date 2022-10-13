@@ -2,6 +2,7 @@ import Head from "next/head";
 import { Fragment, ReactNode } from "react";
 import NavDesktop from "./NavDesktop";
 import NavMobile from "./NavMobile";
+import Footer from "./Footer";
 import { Box } from "@mui/material";
 import {
   AppRegistration,
@@ -82,7 +83,16 @@ const Layout = ({ children }: { children: ReactNode }) => {
         <Box minHeight={"84vh"}>{children}</Box>
       </main>
       <footer>
-        <Box height={"8vh"} className="background-dark" />
+        <Box
+          width={"100%"}
+          height={"16vh"}
+          sx={{
+            backgroundColor: "var(--color-gris-claro)",
+            color: "var(--color-gris-oscuro)",
+          }}
+        >
+          <Footer />
+        </Box>
       </footer>
     </Fragment>
   );
