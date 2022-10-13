@@ -1,7 +1,8 @@
-import { Link, Stack, Typography } from "@mui/material";
+import { Link, Stack, Typography, useMediaQuery } from "@mui/material";
 import { Facebook, Twitter, Instagram, Phone } from "@mui/icons-material";
 
 const Footer = () => {
+  const sm = useMediaQuery("(min-width: 600px)");
   return (
     <Stack
       spacing={2}
@@ -9,7 +10,11 @@ const Footer = () => {
       alignItems={"center"}
       justifyContent={"center"}
     >
-      <Typography variant="h4" className="subtitle bold" textAlign={"center"}>
+      <Typography
+        variant={sm ? "h4" : "h5"}
+        className="subtitle bold"
+        textAlign={"center"}
+      >
         ¿Querés comunicarte con nosotros?
       </Typography>
       <Stack direction={"row"} spacing={5}>

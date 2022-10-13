@@ -39,55 +39,7 @@ const NavMobile = ({
           <Link href="/" flexGrow={1} underline="none" color="inherit">
             <MackoIcon withBorder versionSimple={false} />
           </Link>
-          <IconButton
-            size="large"
-            edge="start"
-            aria-label="menu"
-            sx={{ color: "white" }}
-            onClick={handleClick}
-          >
-            <MenuIcon color="inherit" />
-          </IconButton>
         </Toolbar>
-        <Menu
-          id="basic-menu"
-          anchorEl={anchorEl}
-          open={open}
-          onClose={handleClose}
-          MenuListProps={{
-            "aria-labelledby": "basic-button",
-          }}
-        >
-          {linksLeft.map((link, index) => (
-            <MenuItem
-              key={index}
-              onClick={handleClose}
-              component={Link}
-              href={link.href}
-              underline="none"
-            >
-              {link.icon}
-              <Typography variant="inherit" sx={{ ml: 1 }}>
-                {link.label}
-              </Typography>
-            </MenuItem>
-          ))}
-          <Divider variant="middle" />
-          {linksRight.map((link, index) => (
-            <MenuItem
-              key={index}
-              onClick={handleClose}
-              component={Link}
-              href={link.href}
-              underline="none"
-            >
-              {link.icon}
-              <Typography variant="inherit" sx={{ ml: 1 }}>
-                {link.label}
-              </Typography>
-            </MenuItem>
-          ))}
-        </Menu>
       </AppBar>
     </Box>
   );

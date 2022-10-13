@@ -1,7 +1,8 @@
-import { Button, Grid, Stack, Typography } from "@mui/material";
+import { Button, Grid, Stack, Typography, useMediaQuery } from "@mui/material";
 import Image from "next/image";
 
 const MainSection = () => {
+  const sm = useMediaQuery("(min-width: 600px)");
   const title =
     "¿Sabias que cada donación voluntaria permite salvar hasta cuatro vidas?";
   const subtitle =
@@ -20,18 +21,14 @@ const MainSection = () => {
         xs={12}
         sm={6}
         md={6}
-        lg={4}
+        lg={6}
         direction="column"
         justifyContent="center"
         rowSpacing={{ xs: 2, md: 4 }}
         textAlign={{ xs: "center", sm: "left" }}
       >
         <Grid item>
-          <Typography variant="h3" className="title d-tablet d-desktop">
-            {title}
-          </Typography>
-
-          <Typography variant="h3" className="title d-mobile">
+          <Typography variant={sm ? "h3" : "h4"} className="title">
             {title}
           </Typography>
         </Grid>
@@ -60,7 +57,7 @@ const MainSection = () => {
         xs={12}
         sm={6}
         md={6}
-        lg={8}
+        lg={6}
         direction={"column"}
         flexGrow={1}
         justifyContent="center"
