@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap");
+
 html,
 body {
   padding: 0;
@@ -13,4 +15,115 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+:root {
+  /* Color seleccionados usando color tool de material design */
+  /* https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=7E57C2 */
+  /* deepPurple 400 */
+  --color-primario: #7e57c2;
+  --color-secundario: #b085f5;
+  --color-terciario: #4d2c91;
+  --color-gris-claro: #f3f4f6;
+  --color-gris-oscuro: #707070;
+
+  --color-fondo-oscuro: #b085f5;
+  --color-fondo-claro: #4d2c91;
+
+  /* --color-fuente-gris: #3e3e3e; */
+  --color-fuente-gris: #666666;
+  --color-fuente-gris-oscuro: #3e3e3e;
+
+  --fuente-logotipo: "Nanum Gothic", sans-serif;
+}
+
+.link.link-variant-primary {
+  color: var(--color-primario);
+}
+
+.background-dark {
+  background-color: var(--color-gris-claro);
+}
+
+.background-light {
+  background-color: #ffffff;
+}
+
+.button.contained {
+  background-color: var(--color-primario);
+  color: white;
+  border-radius: 50px;
+}
+
+.button.contained:hover {
+  background-color: var(--color-primario);
+}
+
+.button.button-text {
+  color: var(--color-primario);
+  font-weight: bold;
+}
+
+.title {
+  font-weight: bold;
+  color: var(--color-fuente-gris-oscuro);
+}
+
+.subtitle {
+  color: var(--color-fuente-gris);
+}
+
+/* layout */
+
+.d-mobile {
+  display: block;
+}
+
+.d-tablet {
+  display: none;
+}
+
+.d-desktop {
+  display: none;
+}
+
+.d-mobile.d-tablet {
+  display: block;
+}
+
+@media screen and (min-width: 600px) and (max-width: 900px) {
+  .d-tablet {
+    display: block;
+  }
+
+  .d-mobile {
+    display: none;
+  }
+
+  .d-mobile.d-tablet {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 901px) {
+  .d-mobile.d-tablet {
+    display: none;
+  }
+  .d-tablet {
+    display: none;
+  }
+
+  .d-mobile {
+    display: none;
+  }
+
+  .d-desktop {
+    display: block;
+  }
+}
+
+/* utils */
+.img-section-home {
+  border-radius: 50%;
+  filter: opacity(65%);
 }
