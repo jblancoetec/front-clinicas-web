@@ -1,12 +1,4 @@
-import {
-  Container,
-  Typography,
-  Button,
-  Stack,
-  Grid,
-  Box,
-  Avatar,
-} from "@mui/material";
+import { Container, Stack } from "@mui/material";
 
 import Section from "./Section";
 import Image from "next/image";

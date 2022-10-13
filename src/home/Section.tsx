@@ -6,6 +6,7 @@ import {
   Grid,
   Stack,
   Typography,
+  useMediaQuery,
 } from "@mui/material";
 import { ReactChild } from "react";
 
@@ -24,7 +25,7 @@ const SectionDesktop = ({
   justContent?: boolean;
   reverseContent?: boolean;
 }) => (
-  <Container className="d-desktop">
+  <Container>
     <Grid
       container
       spacing={4}
@@ -93,7 +94,7 @@ const SectionMobile = ({
   subtitle?: string;
   withButtonCreate?: boolean;
 }) => (
-  <Container className="d-mobile d-tablet">
+  <Container>
     <Stack spacing={4} justifyContent="center" alignItems={"center"}>
       <Box>
         <Typography variant="h4" className="title" textAlign={"center"}>
@@ -135,11 +136,14 @@ const Section = (params: {
   withButtonCreate?: boolean;
   justContent?: boolean;
   reverseContent?: boolean;
-}) => (
-  <>
-    <SectionDesktop {...params}>{params.children}</SectionDesktop>
-    <SectionMobile {...params}>{params.children}</SectionMobile>
-  </>
-);
+}) => {
+  const sm = useMediaQuery("min-width(600px)");
+  return (
+    <>
+      {sm && <SectionDesktop {...params}>{params.children}</SectionDesktop>}
+      {!sm && <SectionMobile {...params}>{params.children}</SectionMobile>}
+    </>
+  );
+};
 
 export default Section;

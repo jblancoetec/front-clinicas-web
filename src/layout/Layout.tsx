@@ -4,38 +4,6 @@ import NavDesktop from "./NavDesktop";
 import NavMobile from "./NavMobile";
 import Footer from "./Footer";
 import { Box } from "@mui/material";
-import {
-  AppRegistration,
-  Login,
-  MonetizationOn,
-  Web,
-} from "@mui/icons-material";
-
-const linksLeft = [
-  {
-    label: "Plantillas",
-    href: "/plantillas",
-    icon: <Web />,
-  },
-  {
-    label: "Precios",
-    href: "/precios",
-    icon: <MonetizationOn />,
-  },
-];
-
-const linksRight = [
-  {
-    label: "Iniciar sesión",
-    href: "/login",
-    icon: <Login />,
-  },
-  {
-    label: "Registrarse",
-    href: "/register",
-    icon: <AppRegistration />,
-  },
-];
 
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
@@ -60,8 +28,8 @@ const Layout = ({ children }: { children: ReactNode }) => {
         />
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-        <meta name="msapplication-TileColor" content="#da532c" />
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="msapplication-TileColor" content="#7e57c2" />
+        <meta name="theme-color" content="#da532c" />
         <title>Departamento de Hemoterapia - Hospital de Clinicas</title>
         <meta
           name="description"
@@ -75,7 +43,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
         </Box>
 
         <Box height={"64px"} className="d-tablet d-mobile">
-          <NavMobile linksLeft={linksLeft} linksRight={linksRight} />
+          <NavMobile />
         </Box>
       </header>
 

@@ -1,6 +1,14 @@
 import { Button, Grid, Stack, Typography, useMediaQuery } from "@mui/material";
 import Image from "next/image";
 
+const ButtonDonar = () => (
+  <Grid item>
+    <Button variant="contained" className="button contained" size="large">
+      donar
+    </Button>
+  </Grid>
+);
+
 const MainSection = () => {
   const sm = useMediaQuery("(min-width: 600px)");
   const title =
@@ -41,15 +49,7 @@ const MainSection = () => {
             {subtitle}
           </Typography>
         </Grid>
-        <Grid item className="d-tablet d-desktop">
-          <Button
-            variant="contained"
-            className="button contained "
-            size="large"
-          >
-            donar
-          </Button>
-        </Grid>
+        {sm && <ButtonDonar />}
       </Grid>
       <Grid
         item
@@ -70,13 +70,7 @@ const MainSection = () => {
         />
 
         <Stack direction={"row"} justifyContent="center">
-          <Button
-            variant="contained"
-            className="button contained d-mobile"
-            size="large"
-          >
-            donar
-          </Button>
+          {!sm && <ButtonDonar />}
         </Stack>
       </Grid>
     </Grid>
