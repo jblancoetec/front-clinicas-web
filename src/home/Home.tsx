@@ -17,7 +17,6 @@ const Home = () => {
             <Section
               title="Antes de donar, infórmate"
               subtitle="Estar descansada/o, habiendo dormido por lo menos 6 horas. Sentirse en buenas condiciones (no tener síntomas de malestar general, fiebre, resfrío o tos). Debes desayunar o almorzar de forma habitual y tomar líquidos en abundancia (no alcohólicos). Ingresa a nuestro formulario para saber si eres un posible donante, haciendo CLIC en el botón de DONAR aquí abajo."
-              withButtonCreate
               reverseContent
             >
               <Image
@@ -32,7 +31,6 @@ const Home = () => {
             <Section
               title="¡Bien, eres un posible donante!"
               subtitle="Una vez hecho nuestro formulario y ver que salió todo bien, te vamos a pedir algunos datos, además de fecha y hora en la que podés concurrir al hospital. Si aún no completaste el formulario, estás a tiempo, haciendo CLIC en el botón de DONAR aquí abajo."
-              withButtonCreate
             >
               <Image
                 src="/assets/img-step-2.png"
@@ -47,7 +45,6 @@ const Home = () => {
               title="Concurrí al Centro de Donación con tu DNI"
               subtitle="Tené tu DNI a mano porque deberás presentarlo. En caso de tener dudas o estar en desacuerdo, tenés derecho de auto excluirte y no donar. Para facilitarte el proceso, evitar imprevistos y despejar dudas, te sugerimos que te informes haciendo CLIC en el botón DONAR de aquí abajo."
               reverseContent
-              withButtonCreate
             >
               <Image
                 src="/assets/img-step-3.png"
@@ -61,7 +58,6 @@ const Home = () => {
             <Section
               title="Preséntate en la mesa de entrada"
               subtitle="El personal de salud te entrevistará para ver si estás en condiciones de donar. Toda la información que brindes es confidencial. Se verifica tu peso, temperatura, pulso y presión arterial, y se toman muestras de tu sangre para controlar que tus glóbulos rojos estén bien."
-              withButtonCreate
             >
               <Image
                 src="/assets/img-step-4.png"
@@ -76,7 +72,6 @@ const Home = () => {
               title="Llegó el momento de donar"
               subtitle="La extracción dura entre 7 y 10 minutos. Se realiza en un ambiente seguro y con material descartable. Se extrae sólo una unidad de sangre (alrededor de 450 ml) y pequeñas muestras para posteriores análisis."
               reverseContent
-              withButtonCreate
             >
               <Image
                 src="/assets/img-step-5.png"

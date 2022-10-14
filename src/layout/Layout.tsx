@@ -53,7 +53,6 @@ const Layout = ({ children }: { children: ReactNode }) => {
       <footer>
         <Box
           width={"100%"}
-          height={"16vh"}
           sx={{
             backgroundColor: "var(--color-gris-claro)",
             color: "var(--color-gris-oscuro)",

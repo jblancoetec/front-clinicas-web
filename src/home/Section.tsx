@@ -14,95 +14,34 @@ const SectionDesktop = ({
   children,
   title,
   subtitle,
-  withButtonCreate,
-  justContent,
-  reverseContent,
+  layout,
 }: {
   children: ReactChild;
   title: string;
-  subtitle?: string;
-  withButtonCreate?: boolean;
-  justContent?: boolean;
-  reverseContent?: boolean;
-}) => (
-  <Container>
-    <Grid
-      container
-      spacing={4}
-      justifyContent="center"
-      direction={{
-        md: reverseContent ? "row-reverse" : "row",
-      }}
-    >
-      <Grid
-        item
-        spacing={2}
-        container
-        xs={12}
-        md={justContent ? 12 : 6}
-        textAlign="center"
-        direction="column"
-        justifyContent="center"
+  subtitle: string;
+  layout: string;
+}) => {
+  return (
+    <Container>
+      <Box
+        display={"grid"}
+        gridTemplateColumns={{
+          xs: "1fr",
+          md: "1fr 1fr",
+        }}
+        gridTemplateRows="auto"
+        gridTemplateAreas={{
+          xs: "'title' 'subtitle' 'children' 'btn'",
+          md: layout,
+        }}
+        rowGap={"1rem"}
       >
-        <Grid item>
-          <Typography variant="h4" className="title">
+        <Box gridArea={"title"}>
+          <Typography variant="h4" className="title" textAlign={"center"}>
             {title}
           </Typography>
-        </Grid>
-        {subtitle && (
-          <Grid item>
-            <Typography
-              variant="body1"
-              className="subtitle"
-              maxWidth="sm"
-              mx="auto"
-              textAlign={"center"}
-              sx={{
-                lineHeight: "1.75",
-              }}
-            >
-              {subtitle}
-            </Typography>
-          </Grid>
-        )}
-        {withButtonCreate && (
-          <Grid item className="d-desktop">
-            <Button
-              variant="contained"
-              className="button contained"
-              size="large"
-            >
-              Donar
-            </Button>
-          </Grid>
-        )}
-      </Grid>
-      <Grid item xs={12} md={justContent ? 12 : 6}>
-        {children}
-      </Grid>
-    </Grid>
-  </Container>
-);
-const SectionMobile = ({
-  children,
-  title,
-  subtitle,
-  withButtonCreate,
-}: {
-  children: ReactChild;
-  title: string;
-  subtitle?: string;
-  withButtonCreate?: boolean;
-}) => (
-  <Container>
-    <Stack spacing={4} justifyContent="center" alignItems={"center"}>
-      <Box>
-        <Typography variant="h4" className="title" textAlign={"center"}>
-          {title}
-        </Typography>
-      </Box>
-      {subtitle && (
-        <Box>
+        </Box>
+        <Box gridArea={"subtitle"}>
           <Typography
             variant="body1"
             className="subtitle"
@@ -116,32 +55,36 @@ const SectionMobile = ({
             {subtitle}
           </Typography>
         </Box>
-      )}
-      <Box>{children}</Box>
-      {withButtonCreate && (
-        <Box>
+        <Box gridArea={"btn"} display="flex" justifyContent={"center"}>
           <Button variant="contained" className="button contained" size="large">
             Donar
           </Button>
         </Box>
-      )}
-    </Stack>
-  </Container>
-);
+        <Box gridArea={"children"}>{children}</Box>
+      </Box>
+    </Container>
+  );
+};
 
-const Section = (params: {
+const Section = ({
+  children,
+  title,
+  subtitle,
+  reverseContent = false,
+}: {
   children: ReactChild;
   title: string;
-  subtitle?: string;
-  withButtonCreate?: boolean;
-  justContent?: boolean;
+  subtitle: string;
   reverseContent?: boolean;
 }) => {
-  const sm = useMediaQuery("min-width(600px)");
+  const layout = reverseContent
+    ? "'title children' 'subtitle children' 'btn children'"
+    : "'children title' 'children subtitle ' 'children btn'";
   return (
     <>
-      {sm && <SectionDesktop {...params}>{params.children}</SectionDesktop>}
-      {!sm && <SectionMobile {...params}>{params.children}</SectionMobile>}
+      <SectionDesktop layout={layout} title={title} subtitle={subtitle}>
+        {children}
+      </SectionDesktop>
     </>
   );
 };
