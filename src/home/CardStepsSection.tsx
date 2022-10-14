@@ -1,26 +1,20 @@
-import {
-  Box,
-  Button,
-  Card,
-  Container,
-  Grid,
-  Stack,
-  Typography,
-  useMediaQuery,
-} from "@mui/material";
+import { Box, Button, Container, Typography } from "@mui/material";
 import { ReactChild } from "react";
 
-const SectionDesktop = ({
+const Card = ({
   children,
   title,
   subtitle,
-  layout,
+  reverseContent = false,
 }: {
   children: ReactChild;
   title: string;
   subtitle: string;
-  layout: string;
+  reverseContent?: boolean;
 }) => {
+  const layout = reverseContent
+    ? "'title children' 'subtitle children' 'btn children'"
+    : "'children title' 'children subtitle ' 'children btn'";
   return (
     <Container>
       <Box
@@ -66,27 +60,4 @@ const SectionDesktop = ({
   );
 };
 
-const Section = ({
-  children,
-  title,
-  subtitle,
-  reverseContent = false,
-}: {
-  children: ReactChild;
-  title: string;
-  subtitle: string;
-  reverseContent?: boolean;
-}) => {
-  const layout = reverseContent
-    ? "'title children' 'subtitle children' 'btn children'"
-    : "'children title' 'children subtitle ' 'children btn'";
-  return (
-    <>
-      <SectionDesktop layout={layout} title={title} subtitle={subtitle}>
-        {children}
-      </SectionDesktop>
-    </>
-  );
-};
-
-export default Section;
+export default Card;
