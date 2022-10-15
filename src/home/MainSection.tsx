@@ -1,4 +1,11 @@
-import { Button, Grid, Stack, Typography, useMediaQuery } from "@mui/material";
+import {
+  Box,
+  Button,
+  Grid,
+  Stack,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
 import Image from "next/image";
 
 const ButtonDonar = () => (
@@ -17,63 +24,71 @@ const MainSection = () => {
     " El proceso solo dura entre 7 a 10 minutos, y con eso ayudas un montón. Podes empezar haciendo click en el botón DONAR de aquí abajo. ";
 
   return (
-    <Grid
-      container
-      columnSpacing={{ xs: 0, md: 8 }}
+    <Box
+      display={"grid"}
+      gridTemplateColumns={{
+        xs: "1fr",
+        md: "1fr 1fr",
+      }}
+      gridTemplateRows="auto"
+      gridTemplateAreas={{
+        xs: "'title' 'subtitle' 'img' 'btn'",
+        md: "'. img' 'title img' 'subtitle img' 'btn img' '. img'",
+      }}
       sx={{ minHeight: "92vh" }}
       py={{ xs: 2, md: 0 }}
     >
-      <Grid
-        item
-        container
-        xs={12}
-        sm={6}
-        md={6}
-        lg={6}
-        direction="column"
-        justifyContent="center"
-        rowSpacing={{ xs: 2, md: 4 }}
-        textAlign={{ xs: "center", sm: "left" }}
-      >
-        <Grid item>
-          <Typography variant={sm ? "h3" : "h4"} className="title">
-            {title}
-          </Typography>
-        </Grid>
-        <Grid item>
-          <Typography
-            variant="body1"
-            className="subtitle"
-            sx={{ lineHeight: "1.75" }}
-          >
-            {subtitle}
-          </Typography>
-        </Grid>
-        {sm && <ButtonDonar />}
-      </Grid>
-      <Grid
-        item
-        container
-        xs={12}
-        sm={6}
-        md={6}
-        lg={6}
-        direction={"column"}
-        flexGrow={1}
-        justifyContent="center"
-      >
+      <Box gridArea={"title"} alignSelf="end" justifySelf={"center"}>
+        <Typography
+          variant={sm ? "h3" : "h4"}
+          textAlign={{
+            xs: "center",
+            md: "left",
+          }}
+          className="title"
+          maxWidth={"sm"}
+        >
+          {title}
+        </Typography>
+      </Box>
+      <Box gridArea={"subtitle"} alignSelf="center" justifySelf={"center"}>
+        <Typography
+          variant="h5"
+          className="subtitle"
+          textAlign={{
+            xs: "center",
+            md: "left",
+          }}
+          sx={{ lineHeight: "1.75" }}
+          maxWidth="sm"
+          py={{
+            xs: 2,
+            md: 0,
+          }}
+        >
+          {subtitle}
+        </Typography>
+      </Box>
+      <Box gridArea={"img"} alignSelf="center" justifySelf={"center"}>
         <Image
           src="/assets/main.png"
           width={"676px"}
           height={"658px"}
           alt="Pareja con corazon en el centro"
         />
-
-        <Stack direction={"row"} justifyContent="center">
-          {!sm && <ButtonDonar />}
-        </Stack>
-      </Grid>
-    </Grid>
+      </Box>
+      <Box
+        gridArea={"btn"}
+        alignSelf="start"
+        display={"flex"}
+        justifyContent={{
+          xs: "center",
+          md: "left",
+        }}
+      >
+        <ButtonDonar />
+      </Box>
+    </Box>
   );
 };
 

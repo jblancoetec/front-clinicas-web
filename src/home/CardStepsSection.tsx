@@ -30,12 +30,12 @@ const Card = ({
         }}
         rowGap={"1rem"}
       >
-        <Box gridArea={"title"}>
+        <Box gridArea={"title"} alignSelf="end">
           <Typography variant="h4" className="title" textAlign={"center"}>
             {title}
           </Typography>
         </Box>
-        <Box gridArea={"subtitle"}>
+        <Box gridArea={"subtitle"} alignSelf="center">
           <Typography
             variant="body1"
             className="subtitle"
@@ -49,7 +49,12 @@ const Card = ({
             {subtitle}
           </Typography>
         </Box>
-        <Box gridArea={"btn"} display="flex" justifyContent={"center"}>
+        <Box
+          gridArea={"btn"}
+          alignSelf="start"
+          display="flex"
+          justifyContent={"center"}
+        >
           <Button variant="contained" className="button contained" size="large">
             Donar
           </Button>
