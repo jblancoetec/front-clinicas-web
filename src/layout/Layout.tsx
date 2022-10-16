@@ -27,13 +27,12 @@ const Layout = ({ children }: { children: ReactNode }) => {
           href="/favicon-16x16.png"
         />
         <link rel="manifest" href="/site.webmanifest" />
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
         <meta name="msapplication-TileColor" content="#7e57c2" />
         <meta name="theme-color" content="#7e57c2" />
         <title>Departamento de Hemoterapia - Hospital de Clinicas</title>
         <meta
           name="description"
-          content="Macko - Servicios web especializados en la indumentaria"
+          content="Departamento de Hemoterapia - Hospital de Clinicas"
         />
       </Head>
 
