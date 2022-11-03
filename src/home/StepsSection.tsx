@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const StepsSection = () => (
   <Container>
-    <Stack spacing={8} py={8}>
+    <Stack spacing={8} py={8} marginBottom={"100px"}>
       <Card
         title="Antes de donar, infórmate"
         subtitle="Estar descansada/o, habiendo dormido por lo menos 6 horas. Sentirse en buenas condiciones (no tener síntomas de malestar general, fiebre, resfrío o tos). Debes desayunar o almorzar de forma habitual y tomar líquidos en abundancia (no alcohólicos). Ingresa a nuestro formulario para saber si eres un posible donante, haciendo CLIC en el botón de DONAR aquí abajo."

@@ -3,6 +3,7 @@ import { Container } from "@mui/material";
 import MainSection from "./MainSection";
 import HelpSection from "./HelpSection";
 import StepsSection from "./StepsSection";
+import Advices from "../components/Advices/advice"
 
 const Home = () => {
   return (
@@ -16,6 +17,10 @@ const Home = () => {
       <Container maxWidth={false} className="background-light">
         <StepsSection />
       </Container>
+      <Container maxWidth={false} className="background-light">
+        <Advices />
+      </Container>
+      
     </>
   );
 };

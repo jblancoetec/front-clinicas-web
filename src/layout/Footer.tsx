@@ -9,6 +9,7 @@ const Footer = () => {
       alignItems={"center"}
       justifyContent={"center"}
       py={"2rem"}
+      marginTop={"100px"}
     >
       <Typography variant={"h5"} className="subtitle bold" textAlign={"center"}>
         ¿Querés comunicarte con nosotros?

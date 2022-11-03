@@ -1,0 +1,29 @@
+
+.contenedorCard{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+
+    
+}
+.contenedorDetalles{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 50%;
+    
+}
+
+.text{
+    color: var(--color-fuente-gris);
+    font-size: 16px;
+}
+.icon{
+   opacity: 75%;
+   color: rgb(97, 23, 167);
+}
