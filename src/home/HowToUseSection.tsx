@@ -80,9 +80,11 @@ const HowToUseSection = () => {
     };
   return (
     <Container>
-      <Typography variant="h4" className="title" textAlign={"center"}>
-        ¿Cómo ayudas con tu donación?
-      </Typography>
+      <Box mb={4}>
+        <Typography variant="h4" className="title" textAlign={"center"}>
+          ¿Cómo ayudas con tu donación?
+        </Typography>
+      </Box>
       <Stack
         direction={{
           xs: "column",
