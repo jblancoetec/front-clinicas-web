@@ -37,7 +37,7 @@ export const requisitosData = [
 
 function requisitos() {
   return (
-    <Card reverseContent title={'Condiciones'} subtitle={'Estas son las condiciones para poder ser donador'} >
+    <Card reverseContent title={'Condiciones'} subtitle={'Antes de concurrir al hospital o efectuar una donación, te recomendamos tener en cuenta estas cuatro condiciones.'} >
 
       <Box className={styles.contenedorCard}>
         {requisitosData.map((val, key) => {

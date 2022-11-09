@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 import Image from "next/image";
 
+
 const ButtonDonar = () => (
   <Grid item>
     <Button variant="contained" className="button contained" size="large">
@@ -25,6 +26,7 @@ const MainSection = () => {
 
   return (
     <Box
+      
       display={"grid"}
       gridTemplateColumns={{
         xs: "1fr",

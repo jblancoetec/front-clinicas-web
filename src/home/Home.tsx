@@ -11,15 +11,16 @@ const Home = () => {
       <Container className="background-light">
         <MainSection />
       </Container>
+      <Container maxWidth={false} className="background-light">
+        <Advices />
+      </Container>
       {/* <Container className="background-light">
         <HelpSection />
       </Container> */}
       <Container maxWidth={false} className="background-light">
         <StepsSection />
       </Container>
-      <Container maxWidth={false} className="background-light">
-        <Advices />
-      </Container>
+     
       
     </>
   );
