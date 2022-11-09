@@ -4,6 +4,7 @@ import {
   AccordionSummary,
   Box,
   Container,
+  Fade,
   Stack,
   Typography,
 } from "@mui/material";
@@ -55,7 +56,15 @@ const infoToDeploy: {
 ];
 
 const ImageAccordion = ({ src }: { src: string }) => {
-  return <Image src={src} height="1080px" width="1920px" alt={src} />;
+  return (
+    <Image
+      src={src}
+      height="1080px"
+      width="1920px"
+      alt={src}
+      className="img-section-home"
+    />
+  );
 };
 
 const HowToUseSection = () => {
@@ -74,18 +83,41 @@ const HowToUseSection = () => {
       <Typography variant="h4" className="title" textAlign={"center"}>
         ¿Cómo ayudas con tu donación?
       </Typography>
-      <Stack>
-        <ImageAccordion src={infoToDeploy[idInfoToDeploy].uriImage} />
-        <Box>
+      <Stack
+        direction={{
+          xs: "column",
+          md: "row",
+        }}
+        justifyContent={"space-between"}
+      >
+        <Box
+          width={{
+            xs: "100%",
+            md: "48%",
+          }}
+          display="grid"
+          flexDirection={"column"}
+          justifyContent="center"
+          alignItems={"center"}
+        >
+          <ImageAccordion src={infoToDeploy[idInfoToDeploy].uriImage} />
+        </Box>
+        <Box
+          width={{
+            xs: "100%",
+            md: "45%",
+          }}
+        >
           {infoToDeploy.map((info) => {
             return (
               <Accordion
                 key={info.id}
                 expanded={idInfoToDeploy === info.id}
                 onChange={handleChange(info.id)}
+                elevation={0}
               >
                 <AccordionSummary expandIcon={<ExpandMore />}>
-                  <Typography variant="h5" fontWeight={"bold"}>
+                  <Typography variant="body1" fontWeight={"bold"}>
                     {info.title}
                   </Typography>
                 </AccordionSummary>
