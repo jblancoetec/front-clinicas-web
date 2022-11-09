@@ -10,7 +10,9 @@ import Image from "next/image";
 
 
 const ButtonDonar = () => (
-  <Grid item>
+  <Grid item sx={{
+    marginBottom: "5rem",
+  }} >
     <Button variant="contained" className="button contained" size="large">
       donar
     </Button>
