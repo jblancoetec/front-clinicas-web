@@ -141,8 +141,8 @@ export default function LayoutTextFields({ turnos }: { turnos: string[] }) {
             ))}
             <div>
               <br />
-              <Button type="submit" className={styles.boton}>
-                Enviar
+              <Button type="submit" variant="contained" className="button contained" size="large">
+                Donar
               </Button>
             </div>
             <br />
