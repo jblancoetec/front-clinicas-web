@@ -73,11 +73,11 @@ const MainSection = () => {
           {subtitle}
         </Typography>
       </Box>
-      <Box gridArea={"img"} alignSelf="center" justifySelf={"center"}>
+      <Box gridArea={"img"} alignSelf="center" justifySelf={"center"} >
         <Image
-          src="/assets/main.png"
-          width={"676px"}
-          height={"658px"}
+          src="/assets/imgmain/imgmain.png"
+          width={"1920px"}
+          height={"1080px"}
           alt="Pareja con corazon en el centro"
         />
       </Box>

@@ -6,26 +6,29 @@ import FreeBreakfastOutlinedIcon from '@mui/icons-material/FreeBreakfastOutlined
 import AccessibilityNewOutlinedIcon from '@mui/icons-material/AccessibilityNewOutlined';
 import AccessibleForwardOutlinedIcon from '@mui/icons-material/AccessibleForwardOutlined';
 import Card from '../../home/CardStepsSection';
+import Image from 'next/image'
+
 export const requisitosData = [
   {
 
 
-    icon: <AccessibleForwardOutlinedIcon fontSize='large' />,
+
+    source: "/assets/imgmain/edad.png",
     text: "Tener entre 18 y 65 años de edad.",
   },
   {
 
-    icon: < MonitorWeightOutlinedIcon fontSize='large' />,
+    source: "/assets/imgmain/peso.png",
     text: "Pesar más de 50 kilos.",
   },
   {
 
-    icon: < AccessibilityNewOutlinedIcon fontSize='large' />,
+    source: "/assets/imgmain/dni.png",
     text: "Presentar documento que acredite identidad (con foto).",
   },
   {
 
-    icon: <FreeBreakfastOutlinedIcon fontSize='large' />,
+    source: "/assets/imgmain/tiempo.png",
     text: "Desayunar antes de concurrir",
   },
 ];
@@ -44,11 +47,21 @@ function requisitos() {
           return (
             <Box key={key}
               className={styles.contenedorDetalles} >
-              <div className={styles.icon}>{val.icon}</div>
+              <Box className={styles.contenedorIcono}>
+                <Image
+                  src={val.source}
+                  alt="Antes de donar, infórmate"
+                  width={1920}
+                  height={1080}
+
+                />
+              </Box>
               <div className={styles.text}>{val.text}</div>
             </Box>
+
           );
         })}
+
       </Box>
     </Card>
   )

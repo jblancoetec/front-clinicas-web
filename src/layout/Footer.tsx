@@ -12,34 +12,76 @@ const Footer = () => {
         xs: "center",
         md: "flex-start",
       }}
+      alignContent={{
+        xs: "center",
+        md: "flex-start",
+      }}
       justifyContent={"space-around"}
       py={"2rem"}
     >
-      <Box sx={{ display: "row", alignItems: "center", justifyContent: "center", alignContent: "center" }}>
+      <Stack >
         <Typography variant={"h5"} className="subtitle bold" textAlign={"center"}>
           ¿Querés comunicarte con nosotros?
         </Typography>
-        <Stack direction={"row"} spacing={5} justifyContent={"center"} alignItems={"center"} >
-          <Link href="https://es-la.facebook.com/amhclinicas/" color={"inherit"}>
-            <Facebook color="inherit" />
-          </Link>
-          <Link
-            href="https://twitter.com/Prensaclinicas?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
-            color={"inherit"}
+        <Stack direction={"column"} justifyContent={"flex-start"} alignItems={"start"} >
+          <Box sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            alignContent: "center",
+            gap: "1rem",
+          }}>
+            <Link href="https://es-la.facebook.com/amhclinicas/" color={"inherit"} >
+              <Facebook color="inherit" />
+            </Link>
+            <a href="#">Facebook</a>
+          </Box>
+          <Box sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            alignContent: "center",
+            gap: "1rem",
+          }}>
+            <Link
+              href="https://twitter.com/Prensaclinicas?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
+              color={"inherit"}
+            >
+              <Twitter color="inherit" />
+            </Link>
+            <a href="#">Twitter</a>
+          </Box>
+          <Box sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            alignContent: "center",
+            gap: "1rem",
+          }}>
+
+            <Link
+              href="https://www.instagram.com/hospitaldeclinicasok/?hl=es"
+              color={"inherit"}
+            >
+              <Instagram color="inherit" />
+            </Link>
+            <a href="#">Instagram</a>
+          </Box>
+          <Box sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            alignContent: "center",
+            gap: "1rem",
+          }}
           >
-            <Twitter color="inherit" />
-          </Link>
-          <Link
-            href="https://www.instagram.com/hospitaldeclinicasok/?hl=es"
-            color={"inherit"}
-          >
-            <Instagram color="inherit" />
-          </Link>
-          <Link href="tel:011 5950-8000" color={"inherit"}>
-            <Phone color="inherit" />
-          </Link>
+            <Link href="tel:011 5950-8000" color={"inherit"}>
+              <Phone color="inherit" />
+            </Link>
+            <a href="#">WhatsApp</a>
+          </Box>
         </Stack>
-      </Box>
+      </Stack>
       <Stack display={"flex"}  >
         <Typography variant={"h5"} className="subtitle bold" textAlign={"center"}>
           Desarrollado por
@@ -52,10 +94,10 @@ const Footer = () => {
             display: "flex",
             flexDirection: "column",
           }}>
-          <a href="mailto:gsarubbi28@gmail.com">Gino Sarubbi</a>
-          <a href="mailto:nazareno.fiorentino22@gmail.com">Nazareno Fiorentino</a>
-          <a href="mailto:erebarbozaperi2@gmail.com">Jeremias Barboza</a>
-          <a href="mailto:silvanicol830@gmail.com">Nicole Silva</a>
+            <a href="mailto:gsarubbi28@gmail.com">Gino Sarubbi</a>
+            <a href="mailto:nazareno.fiorentino22@gmail.com">Nazareno Fiorentino</a>
+            <a href="mailto:jerebarbozaperi2@gmail.com">Jeremias Barboza</a>
+            <a href="mailto:silvanicol830@gmail.com">Nicole Silva</a>
           </Box>
         </Box>
       </Stack>
@@ -64,7 +106,7 @@ const Footer = () => {
           Ilustrado por
         </Typography>
         <Box>
-          <a href="mailto:sofiasanmartin@gmail.com">Sofia San Martin</a>
+          <a href="mailto:pepoyiyo@gmail.com">Sofia San Martin</a>
         </Box>
       </Stack>
 
