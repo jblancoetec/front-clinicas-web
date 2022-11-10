@@ -10,7 +10,7 @@ export const requisitosData = [
   {
 
 
-    icon: <AccessibleForwardOutlinedIcon fontSize='large' />,
+    icon: "",
     text: "Tener entre 18 y 65 años de edad.",
   },
   {
