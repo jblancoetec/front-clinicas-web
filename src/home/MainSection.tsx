@@ -8,11 +8,13 @@ import {
 } from "@mui/material";
 import Image from "next/image";
 
-
 const ButtonDonar = () => (
-  <Grid item sx={{
-    marginBottom: "5rem",
-  }} >
+  <Grid
+    item
+    sx={{
+      marginBottom: "5rem",
+    }}
+  >
     <Button variant="contained" className="button contained" size="large">
       donar
     </Button>
@@ -28,7 +30,6 @@ const MainSection = () => {
 
   return (
     <Box
-      
       display={"grid"}
       gridTemplateColumns={{
         xs: "1fr",
@@ -73,12 +74,13 @@ const MainSection = () => {
           {subtitle}
         </Typography>
       </Box>
-      <Box gridArea={"img"} alignSelf="center" justifySelf={"center"} >
+      <Box gridArea={"img"} alignSelf="center" justifySelf={"center"}>
         <Image
           src="/assets/imgmain/imgmain.png"
           width={"1920px"}
           height={"1080px"}
           alt="Pareja con corazon en el centro"
+          className="img-section-home"
         />
       </Box>
       <Box
