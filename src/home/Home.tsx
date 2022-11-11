@@ -1,4 +1,4 @@
-import { Container } from "@mui/material";
+import { Container, Stack } from "@mui/material";
 
 import MainSection from "./MainSection";
 import HelpSection from "./HelpSection";
@@ -12,12 +12,12 @@ const Home = () => {
       <Container className="background-light">
         <MainSection />
       </Container>
-      <Container maxWidth={false} className="background-light">
-        <Advices />
-      </Container>
-      <Container maxWidth={false} className="background-light">
-        <HowToUseSection />
-        <StepsSection />
+      <Container className="background-light">
+        <Stack spacing={8} py={8} marginBottom={"100px"}>
+          <Advices />
+          <HowToUseSection />
+          <StepsSection />
+        </Stack>
       </Container>
     </>
   );
