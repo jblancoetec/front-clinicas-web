@@ -55,7 +55,7 @@ const Card = ({
           display="flex"
           justifyContent={"center"}
         >
-          <Button variant="contained" className="button contained" size="large">
+          <Button href="/formulario" variant="contained" className="button contained" size="large">
             Donar
           </Button>
         </Box>
