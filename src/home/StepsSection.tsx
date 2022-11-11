@@ -6,7 +6,7 @@ const StepsSection = () => (
   <>
     <Card
       title="Antes de donar, infórmate"
-      subtitle="Estar descansada/o, habiendo dormido por lo menos 6 horas. Sentirse en buenas condiciones (no tener síntomas de malestar general, fiebre, resfrío o tos). Debes desayunar o almorzar de forma habitual y tomar líquidos en abundancia (no alcohólicos). Ingresa a nuestro formulario para saber si eres un posible donante, haciendo CLIC en el botón de DONAR aquí abajo."
+      subtitle="Estar descansada/o, habiendo dormido por lo menos 6 horas. Sentirse en buenas condiciones (no tener síntomas de malestar general, fiebre, resfrío o tos). Debes desayunar o almorzar de forma habitual y tomar líquidos en abundancia (no alcohólicos). Chequear requisitos para saber si cumplís con las condiciones generales para ser donador."
       reverseContent
     >
       <Image
@@ -20,7 +20,7 @@ const StepsSection = () => (
 
     <Card
       title="¡Bien, eres un posible donante!"
-      subtitle="Una vez hecho nuestro formulario y ver que salió todo bien, te vamos a pedir algunos datos, además de fecha y hora en la que podés concurrir al hospital. Si aún no completaste el formulario, estás a tiempo, haciendo CLIC en el botón de DONAR aquí abajo."
+      subtitle="Si cumplís con los requisitos mínimos para ser donador, te vamos a pedir algunos datos, además de fecha y hora en la que podés concurrir al hospital. Esto lo hacemos con el propósito de no generar largas esperas ni incomodidades."
     >
       <Image
         src="/assets/imgsteps/2-aprobar.png"
@@ -46,7 +46,7 @@ const StepsSection = () => (
     </Card>
 
     <Card
-      title="Preséntate en la mesa de entrada"
+      title="Presentarse en 3er piso, sala 5 de Hemoterapia"
       subtitle="El personal de salud te entrevistará para ver si estás en condiciones de donar. Toda la información que brindes es confidencial. Se verifica tu peso, temperatura, pulso y presión arterial, y se toman muestras de tu sangre para controlar que tus glóbulos rojos estén bien."
     >
       <Image
@@ -60,11 +60,11 @@ const StepsSection = () => (
 
     <Card
       title="Llegó el momento de donar"
-      subtitle="La extracción dura entre 7 y 10 minutos. Se realiza en un ambiente seguro y con material descartable. Se extrae sólo una unidad de sangre (alrededor de 450 ml) y pequeñas muestras para posteriores análisis."
+      subtitle="La extracción dura unos 40 minutos. Se realiza en un ambiente seguro y con material descartable. Se extrae sólo una unidad de sangre (alrededor de 450 ml) y pequeñas muestras para posteriores análisis."
       reverseContent
     >
       <Image
-        src="/assets/imgsteps/5-donar.png"
+        src="/assets/imgmain/tiempo.png"
         alt="Antes de donar, infórmate"
         height="375px"
         width="666px"
