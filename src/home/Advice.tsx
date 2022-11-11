@@ -1,12 +1,9 @@
 import React from "react";
 import Box from "@mui/material/Box";
-import styles from "../Advices/advice.module.css";
-import MonitorWeightOutlinedIcon from "@mui/icons-material/MonitorWeightOutlined";
-import FreeBreakfastOutlinedIcon from "@mui/icons-material/FreeBreakfastOutlined";
-import AccessibilityNewOutlinedIcon from "@mui/icons-material/AccessibilityNewOutlined";
-import AccessibleForwardOutlinedIcon from "@mui/icons-material/AccessibleForwardOutlined";
-import Card from "../../home/CardStepsSection";
+import styles from "./Advice.module.css";
+import Card from "./CardStepsSection";
 import Image from "next/image";
+import { Typography } from "@mui/material";
 
 export const requisitosData = [
   {
@@ -23,7 +20,7 @@ export const requisitosData = [
   },
   {
     source: "/assets/imgmain/tiempo.png",
-    text: "Desayunar antes de concurrir",
+    text: "Si te hiciste un piercing, un tatuaje o te sometiste a algún tipo de operación, vas a tener que esperar al menos 12 meses para poder donar sangre.",
   },
 ];
 
@@ -31,12 +28,22 @@ function Advices() {
   return (
     <Card
       reverseContent
-      title={"Condiciones"}
+      title={"Requisitos generales para donar sangre"}
       subtitle={
-        "Antes de concurrir al hospital o efectuar una donación, te recomendamos tener en cuenta estas cuatro condiciones."
+        "Antes de concurrir al hospital o efectuar una donación, te recomendamos tener en cuenta estos cuatro consejos."
       }
     >
-      <Box className={styles.contenedorCard}>
+      <Box
+        display={"grid"}
+        gridTemplateColumns={{
+          xs: "1fr",
+          md: "1fr 1fr",
+        }}
+        gridTemplateRows="auto"
+        gap={4}
+        justifyContent="center"
+        alignItems={"flex-start"}
+      >
         {requisitosData.map((val, key) => {
           return (
             <Box key={key} className={styles.contenedorDetalles}>
@@ -48,7 +55,13 @@ function Advices() {
                   height={1080}
                 />
               </Box>
-              <div className={styles.text}>{val.text}</div>
+              <Typography
+                textAlign={"center"}
+                variant="body1"
+                className="subtitle"
+              >
+                {val.text}
+              </Typography>
             </Box>
           );
         })}

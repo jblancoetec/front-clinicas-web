@@ -1,0 +1,25 @@
+.contenedorCard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: auto;
+}
+.contenedorDetalles {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.contenedorIcono {
+  width: 128px;
+  margin: 8px;
+}
+
+.text {
+  color: var(--color-fuente-gris);
+  font-size: 16px;
+}
+.icon {
+  opacity: 75%;
+  color: rgb(97, 23, 167);
+}

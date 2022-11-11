@@ -13,8 +13,8 @@ const Card = ({
   reverseContent?: boolean;
 }) => {
   const layout = reverseContent
-    ? "'title children' 'subtitle children' 'btn children'"
-    : "'children title' 'children subtitle ' 'children btn'";
+    ? "'. children''title children' 'subtitle children' 'btn children' '. children'"
+    : "'children .''children title' 'children subtitle ' 'children btn' 'children .'";
   return (
     <Container>
       <Box
@@ -29,6 +29,9 @@ const Card = ({
           md: layout,
         }}
         rowGap={"1rem"}
+        columnGap={"1rem"}
+        alignItems="center"
+        alignContent={"center"}
       >
         <Box gridArea={"title"} alignSelf="end">
           <Typography variant="h4" className="title" textAlign={"center"}>
@@ -55,7 +58,12 @@ const Card = ({
           display="flex"
           justifyContent={"center"}
         >
-          <Button href="/formulario" variant="contained" className="button contained" size="large">
+          <Button
+            href="/formulario"
+            variant="contained"
+            className="button contained"
+            size="large"
+          >
             Donar
           </Button>
         </Box>

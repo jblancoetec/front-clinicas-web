@@ -1,10 +1,9 @@
 import { Container, Stack } from "@mui/material";
 
 import MainSection from "./MainSection";
-import HelpSection from "./HelpSection";
 import StepsSection from "./StepsSection";
 import HowToUseSection from "./HowToUseSection";
-import Advices from "../components/Advices/advice";
+import Advices from "./Advice";
 
 const Home = () => {
   return (
