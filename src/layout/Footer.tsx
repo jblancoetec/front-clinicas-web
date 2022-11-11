@@ -23,21 +23,28 @@ const Footer = () => {
           xs: "center",
           md: "flex-start",
         }}
-        justifyContent={"space-around"}
+        justifyContent={{
+          xs: "start",
+          md: "space-around",
+        }}
         py={"2rem"}
       >
-        <Stack>
+        <Stack mb={4}>
           <Typography
             variant={"h5"}
             className="subtitle bold"
             textAlign={"center"}
+            mb={2}
           >
             ¿Querés comunicarte con nosotros?
           </Typography>
           <Stack
-            direction={"column"}
+            mx={{
+              xs: "auto",
+              md: "0px",
+            }}
             justifyContent={"flex-start"}
-            alignItems={"start"}
+            alignItems={"flex-start"}
           >
             <Box
               sx={{
@@ -111,35 +118,36 @@ const Footer = () => {
             variant={"h5"}
             className="subtitle bold"
             textAlign={"center"}
+            mb={2}
           >
             Desarrollado por
           </Typography>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
+          <Stack
+            alignItems={{
+              xs: "center",
+              md: "start",
             }}
+            mb={4}
           >
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-              }}
-            >
-              <a href="mailto:gsarubbi28@gmail.com">Gino Sarubbi</a>
-              <a href="mailto:nazareno.fiorentino22@gmail.com">
-                Nazareno Fiorentino
-              </a>
-              <a href="mailto:jerebarbozaperi2@gmail.com">Jeremias Barboza</a>
-              <a href="mailto:silvanicol830@gmail.com">Nicole Silva</a>
-            </Box>
-          </Box>
+            <a href="mailto:gsarubbi28@gmail.com">Gino Sarubbi</a>
+            <a href="mailto:nazareno.fiorentino22@gmail.com">
+              Nazareno Fiorentino
+            </a>
+            <a href="mailto:jerebarbozaperi2@gmail.com">Jeremias Barboza</a>
+            <a href="mailto:silvanicol830@gmail.com">Nicole Silva</a>
+          </Stack>
         </Stack>
-        <Stack>
+        <Stack
+          alignItems={{
+            xs: "center",
+            md: "start",
+          }}
+        >
           <Typography
             variant={"h5"}
             className="subtitle bold"
             textAlign={"center"}
+            mb={2}
           >
             Ilustrado por
           </Typography>
