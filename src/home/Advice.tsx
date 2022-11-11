@@ -30,7 +30,7 @@ function Advices() {
       reverseContent
       title={"Requisitos generales para donar sangre"}
       subtitle={
-        "Antes de concurrir al hospital o efectuar una donación, te recomendamos tener en cuenta estos cuatro consejos."
+        "Antes de concurrir al hospital o efectuar una donación, te recomendamos tener en cuenta estas cuatro condiciones."
       }
     >
       <Box

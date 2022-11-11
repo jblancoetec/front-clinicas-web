@@ -33,7 +33,7 @@ const StepsSection = () => (
 
     <Card
       title="Concurrí al Centro de Donación con tu DNI"
-      subtitle="Tené tu DNI a mano porque deberás presentarlo. En caso de tener dudas o estar en desacuerdo, tenés derecho de auto excluirte y no donar. Para facilitarte el proceso, evitar imprevistos y despejar dudas, te sugerimos que te informes haciendo CLIC en el botón DONAR de aquí abajo."
+      subtitle="Tené tu DNI a mano porque deberás presentarlo. En caso de tener dudas o estar en desacuerdo, tenés derecho de auto excluirte y no donar. Para facilitarte el proceso, evitar imprevistos y despejar dudas, te sugerimos ver las condiciones generales necesarias para ser donador."
       reverseContent
     >
       <Image
