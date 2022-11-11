@@ -13,8 +13,8 @@ const Home = () => {
       </Container>
       <Container className="background-light">
         <Stack spacing={8} py={8} marginBottom={"100px"}>
-          <Advices />
           <HowToUseSection />
+          <Advices />
           <StepsSection />
         </Stack>
       </Container>
