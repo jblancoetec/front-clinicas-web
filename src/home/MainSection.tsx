@@ -1,11 +1,4 @@
-import {
-  Box,
-  Button,
-  Grid,
-  Stack,
-  Typography,
-  useMediaQuery,
-} from "@mui/material";
+import { Box, Button, Grid, Typography, useMediaQuery } from "@mui/material";
 import Image from "next/image";
 
 const ButtonDonar = () => (
@@ -15,7 +8,12 @@ const ButtonDonar = () => (
       marginBottom: "5rem",
     }}
   >
-    <Button variant="contained" className="button contained" size="large">
+    <Button
+      href="/contact"
+      variant="contained"
+      className="button contained"
+      size="large"
+    >
       donar
     </Button>
   </Grid>
@@ -24,7 +22,7 @@ const ButtonDonar = () => (
 const MainSection = () => {
   const sm = useMediaQuery("(min-width: 600px)");
   const title =
-    "¿Sabias que cada donación voluntaria permite salvar hasta cuatro vidas?";
+    "¿Sabías que cada donación voluntaria permite salvar hasta cuatro vidas?";
   const subtitle =
     " El proceso solo dura 40 minutos, y con eso ayudas un montón. Podes empezar haciendo click en el botón DONAR de aquí abajo. ";
 
