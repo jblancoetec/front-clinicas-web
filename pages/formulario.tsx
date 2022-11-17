@@ -1,9 +1,7 @@
-import React from 'react'
-import Home from "../turnos"
+import React from "react";
+import Forms from "../src/turnos";
 
 const turno = () => {
-    return(
-        <Home/>
-    )
-}
-export default turno
+  return <Forms />;
+};
+export default turno;
