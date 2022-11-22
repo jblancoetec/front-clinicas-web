@@ -6,7 +6,7 @@ import styles from "./FormularioTurnos.module.css";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import { ChangeEvent, FormEvent, useState } from "react";
-import { Button, Typography } from "@mui/material";
+import { Button, Container, Typography } from "@mui/material";
 import { postTurno } from "../service";
 import Alert from "@mui/material/Alert";
 
@@ -55,84 +55,95 @@ export default function LayoutTextFields({ turnos }: { turnos: Date[] }) {
       {estado === "okey" && (
         <Alert severity="success">El turno pudo ser reservado</Alert>
       )}
-      <Box
-        component="form"
-        onSubmit={handleSubmit}
-        className={styles.contenedor}
-      >
-        <Typography>Completá con tus datos el siguiente formulario </Typography>
+      <Container maxWidth={"sm"}>
+        <Box
+          component="form"
+          onSubmit={handleSubmit}
+          display="flex"
+          flexDirection={"column"}
+          // className={styles.contenedor}
+        >
+          <Typography variant="h5" mt={2}>
+            Trabajamos para brindarte el mejor de tratos.
+          </Typography>
+          <Typography variant="body1" my={2}>
+            Para facilitar tu proceso de donación, te vamos a pedir algunos
+            datos, además de fecha y hora en la que podés concurrir al hospital,
+            con el propósito de no generar largas esperas ni incomodidades.
+          </Typography>
 
-        <TextField
-          name="nombre"
-          onChange={handleChangeForm}
-          label={"Nombre"}
-          id="Nombre"
-          required={true}
-          type="text"
-        />
-        <TextField
-          name="apellido"
-          onChange={handleChangeForm}
-          label={"Apellido"}
-          id="Apellido"
-          margin="normal"
-          required={true}
-          type="text"
-        />
-        <TextField
-          name="dni"
-          onChange={handleChangeForm}
-          required={true}
-          type="text"
-          label={"Documento De Identidad"}
-          id="DocumentoDeIdentidad"
-          margin="normal"
-        />
-        <TextField
-          name="email"
-          onChange={handleChangeForm}
-          required={true}
-          type="Email"
-          label={"Correo Electronico"}
-          id="CorreoElectronico"
-          margin="normal"
-        />
-        <TextField
-          name="telefono"
-          onChange={handleChangeForm}
-          required={true}
-          type="number"
-          label={"Numero De Telefono"}
-          id="NumeroDeTelefono"
-          margin="normal"
-        />
+          <TextField
+            name="nombre"
+            onChange={handleChangeForm}
+            label={"Nombre"}
+            id="Nombre"
+            required={true}
+            type="text"
+          />
+          <TextField
+            name="apellido"
+            onChange={handleChangeForm}
+            label={"Apellido"}
+            id="Apellido"
+            margin="normal"
+            required={true}
+            type="text"
+          />
+          <TextField
+            name="dni"
+            onChange={handleChangeForm}
+            required={true}
+            type="text"
+            label={"Documento De Identidad"}
+            id="DocumentoDeIdentidad"
+            margin="normal"
+          />
+          <TextField
+            name="email"
+            onChange={handleChangeForm}
+            required={true}
+            type="Email"
+            label={"Correo Electronico"}
+            id="CorreoElectronico"
+            margin="normal"
+          />
+          <TextField
+            name="telefono"
+            onChange={handleChangeForm}
+            required={true}
+            type="number"
+            label={"Numero De Telefono"}
+            id="NumeroDeTelefono"
+            margin="normal"
+          />
 
-        <Typography> Elegí unos de los siguientes turnos </Typography>
+          <Typography my={2}>Elegí unos de los siguientes horarios </Typography>
 
-        <Box>
-          <FormGroup className={styles.contenedorCheck}>
-            {turnos.map((turno, index) => (
-              <FormControlLabel
-                checked={index === indexTurnoSeleccionado}
-                onChange={createHandleChangeTurno(index)}
-                key={index}
-                control={<Checkbox />}
-                label={new Date(turno).toLocaleString()}
-              />
-            ))}
-            <Box>
-              <Button
-                type="submit"
-                variant="contained"
-                className="button contained"
-                size="large"
-              >
-                Enviar
-              </Button>
-            </Box>
-          </FormGroup>
+          <Box>
+            <FormGroup className={styles.contenedorCheck}>
+              {turnos.map((turno, index) => (
+                <FormControlLabel
+                  checked={index === indexTurnoSeleccionado}
+                  onChange={createHandleChangeTurno(index)}
+                  key={index}
+                  control={<Checkbox />}
+                  label={new Date(turno).toLocaleString()}
+                />
+              ))}
+              <Box my={2}>
+                <Button
+                  type="submit"
+                  variant="contained"
+                  className="button contained"
+                  size="large"
+                >
+                  Enviar
+                </Button>
+              </Box>
+            </FormGroup>
+          </Box>
         </Box>
-      </Box>
+      </Container>
     </>
   );
 }
