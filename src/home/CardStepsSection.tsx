@@ -59,7 +59,7 @@ const Card = ({
           justifyContent={"center"}
         >
           <Button
-            href="/contact"
+            href="/formulario"
             variant="contained"
             className="button contained"
             size="large"
