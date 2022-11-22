@@ -5,41 +5,22 @@ import Checkbox from "@mui/material/Checkbox";
 import styles from "./FormularioTurnos.module.css";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
-import axios from "axios";
 import { ChangeEvent, FormEvent, useState } from "react";
-import { Button } from "@mui/material";
-import { getTurnosDisponible, postTurno } from "../service";
-import LinearProgress from "@mui/material/LinearProgress";
+import { Button, Typography } from "@mui/material";
+import { postTurno } from "../service";
 import Alert from "@mui/material/Alert";
-import { Turno } from "../interfaces";
 
-const label = { inputProps: { "aria-label": "Checkbox demo" } };
-
-function RedBar() {
-  return (
-    <Box
-      sx={{
-        height: 20,
-        backgroundColor: (theme) =>
-          theme.palette.mode === "light"
-            ? "rgba(255, 0, 0, 0.1)"
-            : "rgb(255 132 132 / 25%)",
-      }}
-    />
-  );
-}
-
-export default function LayoutTextFields({ turnos }: { turnos: string[] }) {
+export default function LayoutTextFields({ turnos }: { turnos: Date[] }) {
   const [indexTurnoSeleccionado, setIndexTurnoSeleccionado] = useState(1);
   const [datosTurno, setDatosTurno] = useState({
-    nombre: " ",
-    apellido: " ",
-    dni: " ",
-    email: " ",
-    telefono: " ",
-    fecha: " ",
+    nombre: "",
+    apellido: "",
+    dni: "",
+    email: "",
+    telefono: "",
+    fecha: new Date(),
   });
-  const [estado, setEstado] = useState("loading");
+  const [estado, setEstado] = useState<"loading" | "okey" | "error">("loading");
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -48,6 +29,7 @@ export default function LayoutTextFields({ turnos }: { turnos: string[] }) {
       setEstado(res.status);
     } catch (error) {
       setEstado("error");
+      console.log(error);
     }
   };
 
@@ -61,24 +43,24 @@ export default function LayoutTextFields({ turnos }: { turnos: string[] }) {
   const createHandleChangeTurno = (indexTurno: number) => {
     return () => {
       setIndexTurnoSeleccionado(indexTurno);
+      setDatosTurno({ ...datosTurno, fecha: turnos[indexTurnoSeleccionado] });
     };
   };
 
   return (
     <>
-      {estado === "cargando" && <LinearProgress />}
       {estado === "error" && (
         <Alert severity="error"> El turno no pudo ser enviado </Alert>
+      )}
+      {estado === "okey" && (
+        <Alert severity="success">El turno pudo ser reservado</Alert>
       )}
       <Box
         component="form"
         onSubmit={handleSubmit}
         className={styles.contenedor}
       >
-        <RedBar />
-        <p> Completá con tus datos el siguiente formulario </p>
-
-        <RedBar />
+        <Typography>Completá con tus datos el siguiente formulario </Typography>
 
         <TextField
           name="nombre"
@@ -124,30 +106,32 @@ export default function LayoutTextFields({ turnos }: { turnos: string[] }) {
           id="NumeroDeTelefono"
           margin="normal"
         />
-        <RedBar />
 
-        <p> Elegí unos de los siguientes turnos </p>
+        <Typography> Elegí unos de los siguientes turnos </Typography>
 
-        <div>
+        <Box>
           <FormGroup className={styles.contenedorCheck}>
             {turnos.map((turno, index) => (
               <FormControlLabel
                 checked={index === indexTurnoSeleccionado}
                 onChange={createHandleChangeTurno(index)}
                 key={index}
-                control={<Checkbox defaultChecked />}
+                control={<Checkbox />}
                 label={new Date(turno).toLocaleString()}
               />
             ))}
-            <div>
-              <br />
-              <Button type="submit" variant="contained" className="button contained" size="large">
+            <Box>
+              <Button
+                type="submit"
+                variant="contained"
+                className="button contained"
+                size="large"
+              >
                 Enviar
               </Button>
-            </div>
-            <br />
+            </Box>
           </FormGroup>
-        </div>
+        </Box>
       </Box>
     </>
   );

@@ -1,23 +1,22 @@
-import React, { Component, useEffect, useState } from "react";
+import { Alert, LinearProgress } from "@mui/material";
+import React from "react";
 import Formulario from "./components/FormularioTurnos";
-import { Turno } from "./interfaces";
-import { getTurnosDisponible } from "./service";
+import { useTurnosDisponibles } from "./hooks";
 
 const Index = () => {
-  const [turnosDisponibles, setTurnosDisponibles] = useState<string[]>([]);
-  useEffect(() => {
-    async function get() {
-      try {
-        const res = await getTurnosDisponible();
-        setTurnosDisponibles(res.turnos);
-      } catch (error) {
-        console.log("error");
-      }
-    }
-    get();
-  }, []);
+  const stateTurnos = useTurnosDisponibles();
 
-  return <Formulario turnos={turnosDisponibles} />;
+  return (
+    <>
+      {stateTurnos.status === "loading" && <LinearProgress />}
+      {stateTurnos.status === "error" && (
+        <Alert severity="error">Algo no fue como se esperaba</Alert>
+      )}
+      {stateTurnos.status === "okey" && (
+        <Formulario turnos={stateTurnos.turnos} />
+      )}
+    </>
+  );
 };
 
 export default Index;
