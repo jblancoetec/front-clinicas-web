@@ -6,7 +6,7 @@ import styles from "./FormularioTurnos.module.css";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import { ChangeEvent, FormEvent, useState } from "react";
-import { Button, Container, Stack, Typography } from "@mui/material";
+import { Button, Container, Link, Stack, Typography } from "@mui/material";
 import { postTurno } from "../service";
 import Alert from "@mui/material/Alert";
 
@@ -56,7 +56,10 @@ export default function LayoutTextFields({ turnos }: { turnos: Date[] }) {
         >
           <Typography textAlign={"center"}>
             ¡¡¡¡Todo listo!!!!👏 Te esperamos en el 3er Piso, sala 5 del
-            Hospital de Clinicas, Av. Córdoba 2351
+            Hospital de Clinicas,{" "}
+            <Link href="https://goo.gl/maps/iF42BKGs5VpAmBuJ6">
+              Av. Córdoba 2351.
+            </Link>
           </Typography>
         </Alert>
       )}
