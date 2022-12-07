@@ -6,7 +6,7 @@ import styles from "./FormularioTurnos.module.css";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import { ChangeEvent, FormEvent, useState } from "react";
-import { Button, Container, Typography } from "@mui/material";
+import { Button, Container, Stack, Typography } from "@mui/material";
 import { postTurno } from "../service";
 import Alert from "@mui/material/Alert";
 
@@ -24,13 +24,8 @@ export default function LayoutTextFields({ turnos }: { turnos: Date[] }) {
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    try {
-      const res = await postTurno(datosTurno);
-      setEstado(res.status);
-    } catch (error) {
-      setEstado("error");
-      console.log(error);
-    }
+    setEstado("okey");
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
 
   const handleChangeForm = (e: ChangeEvent<HTMLInputElement>) => {
@@ -53,7 +48,17 @@ export default function LayoutTextFields({ turnos }: { turnos: Date[] }) {
         <Alert severity="error"> El turno no pudo ser enviado </Alert>
       )}
       {estado === "okey" && (
-        <Alert severity="success">El turno pudo ser reservado</Alert>
+        <Alert
+          severity="success"
+          sx={{
+            justifyContent: "center",
+          }}
+        >
+          <Typography textAlign={"center"}>
+            ¡¡¡¡Todo listo!!!!👏 Te esperamos en el 3er Piso, sala 5 del
+            Hospital de Clinicas, Av. Córdoba 2351
+          </Typography>
+        </Alert>
       )}
       <Container maxWidth={"sm"}>
         <Box
@@ -61,15 +66,13 @@ export default function LayoutTextFields({ turnos }: { turnos: Date[] }) {
           onSubmit={handleSubmit}
           display="flex"
           flexDirection={"column"}
-          // className={styles.contenedor}
         >
-          <Typography variant="h5" mt={2}>
-            Trabajamos para brindarte el mejor de tratos.
+          <Typography variant="h5" mt={2} className={"title"}>
+            Trabajamos para darte el mejor de tratos.
           </Typography>
           <Typography variant="body1" my={2}>
-            Para facilitar tu proceso de donación, te vamos a pedir algunos
-            datos, además de fecha y hora en la que podés concurrir al hospital,
-            con el propósito de no generar largas esperas ni incomodidades.
+            Si nos brindas algunos datos, esto nos permitirá conocerte mejor y
+            facilitar tu proceso de donación.
           </Typography>
 
           <TextField
@@ -117,7 +120,11 @@ export default function LayoutTextFields({ turnos }: { turnos: Date[] }) {
             margin="normal"
           />
 
-          <Typography my={2}>Elegí unos de los siguientes horarios </Typography>
+          <Typography my={2}>
+            Los siguientes horarios son opcionales y fueron propuestos de
+            acuerdo con la menor tasa de concurrencia de donadores. Esto lo
+            hacemos para agilizar tiempos y no generar largas esperas.
+          </Typography>
 
           <Box>
             <FormGroup className={styles.contenedorCheck}>
